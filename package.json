@@ -22,7 +22,8 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "prepublishOnly": "pnpm run build",
-    "patch": "pnpm version patch"
+    "patch": "pnpm version patch",
+    "release": "semantic-release"
   },
   "dependencies": {
     "@nestjs/graphql": "^13.2.4",

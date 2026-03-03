@@ -41,11 +41,15 @@ jobs:
           key: pnpm-${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             pnpm-${{ runner.os }}-
+      - name: Setup npm auth
+        run: |
+          echo "@omnixys:registry=https://npm.pkg.github.com" >> ~/.npmrc
+          echo "//npm.pkg.github.com/:_authToken=${OMNIXYS_TOKEN}" >> ~/.npmrc
+        env:
+          OMNIXYS_TOKEN: ${{ secrets.OMNIXYS_TOKEN }}
 
       - name: 📦 Install dependencies
         run: pnpm install --frozen-lockfile
-        env:
-          OMNIXYS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Semantic Release
         run: pnpm run release
@@ -63,7 +67,7 @@ jobs:
         run: |
           gh variable set CURRENT_VERSION \
             --body "$CURRENT_VERSION" \
-            --repo omnixys/${{ vars.SERVICE }}
+            --repo omnixys/${{ vars.PACKAGE }}
 
       - name: Update org variable
         env:

@@ -3,6 +3,12 @@
 All notable changes in this project will be documented in this file.
 
 
+## [1.0.1](https://github.com/omnixys/graphql/compare/v1.0.0...v1.0.1) (2026-03-03)
+
+### Inputs
+
+* **Inputs:** add explicit callback type ([](https://github.com/omnixys/graphql/commit/32e7400970e7e864f2c6a8bcb98c774a37700df1))
+
 ## 1.0.0 (2026-03-03)
 
 ### Initial

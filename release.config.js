@@ -156,7 +156,7 @@ export default {
         releaseBodyTemplate: `
 ## 🚀 Release v<%= nextRelease.version %>
 
-**Package:** <%= require('./package.json').name %>  
+**Package:** <%= context.packageJson.name %>
 **Release Type:** <%= nextRelease.type %>  
 **Git Tag:** <%= nextRelease.gitTag %>  
 **Branch:** <%= branch.name %>

@@ -26,7 +26,7 @@ jobs:
       - run: pnpm install
         env:
           OMNIXYS_TOKEN: ${{ secrets.OMNIXYS_TOKEN }}
-          
+
       - run: pnpm build
 
       - name: Setup npm registry auth

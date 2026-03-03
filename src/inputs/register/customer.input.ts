@@ -1,6 +1,5 @@
-import { StatusType } from '../../enums/status-type.enum.js';
 import { Field, ID, InputType } from '@nestjs/graphql';
-import { ContactOptionsType } from '@omnixys/contracts';
+import { ContactOptionsType, StatusType } from '@omnixys/contracts';
 import { IsBoolean, IsEnum } from 'class-validator';
 
 @InputType()

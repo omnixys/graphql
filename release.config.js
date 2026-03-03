@@ -154,26 +154,26 @@ export default {
         assets: [{ path: "CHANGELOG.md", label: "Changelog" }],
 
         releaseBodyTemplate: `
-## 🚀 Release v<%= nextRelease.version %>
+# 🚀 Release v<%= nextRelease.version %>
 
-**Package:** <%= pkg.name %>  
-**Release Type:** <%= nextRelease.type %>  
-**Git Tag:** <%= nextRelease.gitTag %>  
-**Branch:** <%= branch.name %>
+We are excited to release **@omnixys/contracts** 🎉
 
 ---
 
-### 📦 Changes
+## 📦 Changes
 
 <%= nextRelease.notes %>
 
 ---
 
-### 🔎 Release Details
+## 🔎 Release Details
 
+- Repository: <%= options.repositoryUrl %>
+- Release Type: <%= nextRelease.type %>
+- Git Tag: <%= nextRelease.gitTag %>
+- Branch: <%= branch.name %>
 - Previous Version: <%= lastRelease ? lastRelease.version : 'N/A' %>
 - Commit: <%= nextRelease.gitHead.substring(0, 7) %>
-- Repository: <%= options.repositoryUrl %>
 
 ---
 

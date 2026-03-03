@@ -31,7 +31,7 @@ export class UserAddressInput {
   @Field(() => String)
   addressType!: string;
 
-  @Field({ nullable: true })
+  @Field(() => String, { nullable: true })
   @IsOptional()
   @IsString()
   additionalInfo?: string;

@@ -154,9 +154,7 @@ export default {
         assets: [{ path: "CHANGELOG.md", label: "Changelog" }],
 
         releaseBodyTemplate: `
-# 🚀 Release v<%= nextRelease.version %>
-
-We are excited to release **@omnixys/contracts** 🎉
+# 🚀 **@omnixys/graphql** Release v<%= nextRelease.version %>
 
 ---
 

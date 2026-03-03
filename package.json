@@ -4,6 +4,7 @@
   "description": "Shared GraphQL Inputs, ObjectTypes, Enums and Federation types for Omnixys services",
   "license": "GPL-3.0-or-later",
   "type": "module",
+  "private": false,
   "packageManager": "pnpm@9.12.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

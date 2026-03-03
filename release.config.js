@@ -156,7 +156,7 @@ export default {
         releaseBodyTemplate: `
 ## 🚀 Release v<%= nextRelease.version %>
 
-**Package:** <%= context.packageJson.name %>
+**Package:** <%= pkg.name %>  
 **Release Type:** <%= nextRelease.type %>  
 **Git Tag:** <%= nextRelease.gitTag %>  
 **Branch:** <%= branch.name %>
@@ -171,7 +171,7 @@ export default {
 
 ### 🔎 Release Details
 
-- Previous Version: <%= lastRelease?.version || 'N/A' %>
+- Previous Version: <%= lastRelease ? lastRelease.version : 'N/A' %>
 - Commit: <%= nextRelease.gitHead.substring(0, 7) %>
 - Repository: <%= options.repositoryUrl %>
 

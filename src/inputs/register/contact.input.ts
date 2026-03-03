@@ -1,4 +1,4 @@
-import { Field, ID, InputType } from '@nestjs/graphql';
+import { Field, GraphQLISODateTime, ID, InputType } from '@nestjs/graphql';
 import { RelationshipType } from '@omnixys/contracts';
 import {
   IsBoolean,
@@ -28,11 +28,11 @@ export class ContactInput {
   @IsBoolean()
   emergency?: boolean;
 
-  @Field(() => Date, { nullable: true })
+  @Field(() => GraphQLISODateTime, { nullable: true })
   @IsOptional()
   startDate?: Date;
 
-  @Field(() => Date, { nullable: true })
+  @Field(() => GraphQLISODateTime, { nullable: true })
   @IsOptional()
   endDate?: Date;
 }

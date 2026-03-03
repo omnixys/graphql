@@ -5,7 +5,7 @@ import { EmployeeInput } from './employee.input.js';
 import { PersonalInfoInput } from './personal-info.input.js';
 import { PhoneNumberInput } from './phone-number.input.js';
 import { AddSecurityQuestionInput } from './security-question.input.js';
-import { Field, InputType } from '@nestjs/graphql';
+import { Field, GraphQLISODateTime, InputType } from '@nestjs/graphql';
 import { UserType } from '@omnixys/contracts';
 import { IsBoolean, IsString, Length } from 'class-validator';
 
@@ -53,6 +53,6 @@ export class CreateUserInput {
   @IsBoolean()
   acceptedTerms!: boolean;
 
-  @Field(() => Date)
+  @Field(() => GraphQLISODateTime)
   acceptedTermsAt!: Date;
 }

@@ -1,4 +1,4 @@
-import { Field, InputType } from '@nestjs/graphql';
+import { Field, GraphQLISODateTime, InputType } from '@nestjs/graphql';
 import { IsBoolean, IsOptional, IsString, IsNumber } from 'class-validator';
 
 @InputType()
@@ -23,7 +23,7 @@ export class EmployeeInput {
   @IsNumber()
   salary?: number;
 
-  @Field(() => Date, { nullable: true })
+  @Field(() => GraphQLISODateTime, { nullable: true })
   @IsOptional()
   hireDate?: Date;
 

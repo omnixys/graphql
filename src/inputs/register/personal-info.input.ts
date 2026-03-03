@@ -1,4 +1,4 @@
-import { Field, InputType } from '@nestjs/graphql';
+import { Field, GraphQLISODateTime, InputType } from '@nestjs/graphql';
 import { GenderType, MaritalStatusType } from '@omnixys/contracts';
 import { IsEmail, IsEnum, IsOptional, IsString } from 'class-validator';
 
@@ -16,7 +16,7 @@ export class PersonalInfoInput {
   @IsString()
   lastName!: string;
 
-  @Field(() => Date, { nullable: true })
+  @Field(() => GraphQLISODateTime, { nullable: true })
   @IsOptional()
   birthDate?: Date;
 

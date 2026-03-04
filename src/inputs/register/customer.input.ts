@@ -13,7 +13,7 @@ export class CustomerInput {
   state?: StatusType;
 
   @Field(() => [ID])
-  interests!: string[];
+  interestIds!: string[];
 
   @Field(() => [ContactOptionsType])
   contactOptions!: ContactOptionsType[];

@@ -154,7 +154,7 @@ export default {
         assets: [{ path: "CHANGELOG.md", label: "Changelog" }],
 
         releaseBodyTemplate: `
-# 🚀 **@omnixys/graphql** Release v<%= nextRelease.version %>
+# 🚀 Release v<%= nextRelease.version %>
 
 ---
 
@@ -166,7 +166,6 @@ export default {
 
 ## 🔎 Release Details
 
-- Repository: <%= options.repositoryUrl %>
 - Release Type: <%= nextRelease.type %>
 - Git Tag: <%= nextRelease.gitTag %>
 - Branch: <%= branch.name %>
@@ -176,6 +175,9 @@ export default {
 ---
 
 🏢 **Organization:** Omnixys
+📦 **Package:** @omnixys/graphql
+🔗 **Repository:** Repository: <%= options.repositoryUrl %>
+🧭 **Docs:** https://omnixys.com/docs
 `,
       },
     ],

@@ -12,15 +12,15 @@ export class UserAddressInput {
   @IsString()
   houseNumber!: string;
 
-  @Field(() => ID)
+  @Field(() => ID, { nullable: true })
   @IsString()
-  postalCodeId!: string;
+  postalCodeId?: string;
 
   @Field(() => ID)
   @IsString()
   cityId!: string;
 
-  @Field(() => ID)
+  @Field(() => ID, { nullable: true })
   @IsString()
   stateId?: string;
 

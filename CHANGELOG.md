@@ -3,6 +3,21 @@
 All notable changes in this project will be documented in this file.
 
 
+## [1.0.2](https://github.com/omnixys/graphql/compare/v1.0.1...v1.0.2) (2026-03-04)
+
+### Input
+
+* **Input:** change input type customerInput ([](https://github.com/omnixys/graphql/commit/bd3e60db9902885eedb2ed8ca18dab5336146e4f))
+* **Input:** change usser address input ([](https://github.com/omnixys/graphql/commit/fd6d521e296e4550b838295a58ff100c5590a56c))
+
+### Inputs
+
+* **Inputs:** change Date callback to GraphQLISODateTime ([](https://github.com/omnixys/graphql/commit/4b29a37f4921de21d85876629fc08ca272a8e778))
+
+### Other
+
+* **Other:** Merge branch 'main' of https://github.com/omnixys/graphql ([](https://github.com/omnixys/graphql/commit/a76c093fad6adc7e493af7cebb87ceeb5ba4a513))
+
 ## [1.0.1](https://github.com/omnixys/graphql/compare/v1.0.0...v1.0.1) (2026-03-03)
 
 ### Inputs

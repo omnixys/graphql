@@ -4,15 +4,18 @@ import { IsString, Length, IsEnum, IsOptional } from "class-validator";
 @InputType()
 export class UserAddressInput {
   @Field(() => String, { nullable: true })
+  @IsOptional()
   @IsString()
   @Length(1, 255)
   street?: string;
 
   @Field(() => String, { nullable: true })
+  @IsOptional()
   @IsString()
   houseNumber?: string;
 
   @Field(() => ID, { nullable: true })
+  @IsOptional()
   @IsString()
   postalCodeId?: string;
 
@@ -21,6 +24,7 @@ export class UserAddressInput {
   cityId!: string;
 
   @Field(() => ID, { nullable: true })
+  @IsOptional()
   @IsString()
   stateId?: string;
 

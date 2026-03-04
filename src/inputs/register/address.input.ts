@@ -3,14 +3,14 @@ import { IsString, Length, IsEnum, IsOptional } from "class-validator";
 
 @InputType()
 export class UserAddressInput {
-  @Field(() => String)
+  @Field(() => String, { nullable: true })
   @IsString()
   @Length(1, 255)
-  street!: string;
+  street?: string;
 
-  @Field(() => String)
+  @Field(() => String, { nullable: true })
   @IsString()
-  houseNumber!: string;
+  houseNumber?: string;
 
   @Field(() => ID, { nullable: true })
   @IsString()

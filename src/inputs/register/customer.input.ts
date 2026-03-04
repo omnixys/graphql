@@ -12,7 +12,7 @@ export class CustomerInput {
   @IsEnum(StatusType)
   state?: StatusType;
 
-  @Field(() => [ID])
+  @Field(() => [ID], { nullable: true })
   interestIds!: string[];
 
   @Field(() => [ContactOptionsType])

@@ -25,7 +25,7 @@
     "patch": "pnpm version patch",
     "release": "semantic-release"
   },
-  "dependencies": {
+  "peerDependencies": {
     "@nestjs/graphql": "^13.2.4",
     "@omnixys/contracts": "^1.1.1",
     "class-validator": "^0.15.1"

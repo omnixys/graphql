@@ -1,6 +1,6 @@
 {
   "name": "@omnixys/graphql",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Shared GraphQL Inputs, ObjectTypes, Enums and Federation types for Omnixys services",
   "license": "GPL-3.0-or-later",
   "type": "module",

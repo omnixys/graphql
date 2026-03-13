@@ -175,7 +175,7 @@ export default {
 ---
 
 🏢 **Organization:** Omnixys
-📦 **Package:** @omnixys/graphql
+📦 **Package:** GraphQl
 🔗 **Repository:** Repository: <%= options.repositoryUrl %>
 🧭 **Docs:** https://omnixys.com/docs
 `,

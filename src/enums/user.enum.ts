@@ -2,10 +2,12 @@ import { registerEnumType } from '@nestjs/graphql';
 import {
   ContactOptionsType,
   GenderType,
+  InterestCategoryType,
   InterestType,
   MaritalStatusType,
-  PersonStatus,
+  PersonStatusType,
   PhoneNumberType,
+  RealmRole,
   RelationshipType,
   StatusType,
   UserType,
@@ -31,8 +33,8 @@ registerEnumType(MaritalStatusType, {
   description: 'Specifies the marital status of a person.',
 });
 
-registerEnumType(PersonStatus, {
-  name: 'PersonStatus',
+registerEnumType(PersonStatusType, {
+  name: 'PersonStatusType',
   description: 'Represents the current lifecycle state of a user.',
 });
 
@@ -55,3 +57,14 @@ registerEnumType(UserType, {
   name: 'UserType',
   description: 'Specifies the category of a user (customer, employee, guest).',
 });
+
+registerEnumType(RealmRole, 
+  { name: 'RealmRole', 
+    description: 'Defines the Role of an User.'
+  });
+
+  registerEnumType(InterestCategoryType, 
+    { 
+      name: 'InterestCategoryType',
+      description: 'Represents Interest Categories.'
+    });

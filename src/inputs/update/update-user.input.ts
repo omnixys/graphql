@@ -1,7 +1,7 @@
 
 import { Field, InputType, ID } from '@nestjs/graphql';
 import { IsEnum, IsOptional } from 'class-validator';
-import { PersonStatus, UserType } from '@omnixys/contracts';
+import { PersonStatusType, UserType } from '@omnixys/contracts';
 import { PersonalInfoInput } from '../register/personal-info.input.js';
 
 @InputType()
@@ -24,8 +24,8 @@ export class UpdateUserInput {
   @IsEnum(UserType)
   userType?: UserType;
 
-  @Field(() => PersonStatus, { nullable: true })
+  @Field(() => PersonStatusType, { nullable: true })
   @IsOptional()
-  @IsEnum(PersonStatus)
-  status?: PersonStatus;
+  @IsEnum(PersonStatusType)
+  status?: PersonStatusType;
 }

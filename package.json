@@ -19,15 +19,27 @@
     "graphql",
     "microservices"
   ],
+    "sideEffects": false,
+      "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+    "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "prepublishOnly": "pnpm run build",
     "patch": "pnpm version patch",
-    "release": "semantic-release"
+    "release": "semantic-release",
+        "dev": "tsc -w"
   },
   "peerDependencies": {
     "@nestjs/graphql": "^13.2.4",
-    "@omnixys/contracts": "^1.1.1",
+    "@omnixys/contracts": "^1.5.1",
     "class-validator": "^0.15.1"
   },
   "devDependencies": {

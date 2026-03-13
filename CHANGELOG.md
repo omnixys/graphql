@@ -3,6 +3,24 @@
 All notable changes in this project will be documented in this file.
 
 
+## [2.0.0](https://github.com/omnixys/graphql/compare/v1.0.3...v2.0.0) (2026-03-13)
+
+### Enum
+
+* **Enum:** add interestTypes and changed names ([](https://github.com/omnixys/graphql/commit/5b835f8bfe15cebecbe1c384f19e0e15e93ac950))
+
+### Inputs
+
+* **Inputs:** change address input class ([](https://github.com/omnixys/graphql/commit/385577d9382ad444888d9789afd922dc39604236))
+
+### Other
+
+* **Other:** Merge branch 'main' of https://github.com/omnixys/graphql ([](https://github.com/omnixys/graphql/commit/37b641724d8cdcfb964901b263af0951120760a2))
+
+### Update
+
+* **Update:** update packages ([](https://github.com/omnixys/graphql/commit/8f636792e1d0e84a5363c414ef82ab19f3a56032))
+
 ## [1.0.3](https://github.com/omnixys/graphql/compare/v1.0.2...v1.0.3) (2026-03-04)
 
 ### Other

@@ -1,6 +1,6 @@
 {
   "name": "@omnixys/graphql",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "Shared GraphQL Inputs, ObjectTypes, Enums and Federation types for Omnixys services",
   "license": "GPL-3.0-or-later",
   "type": "module",
@@ -19,15 +19,15 @@
     "graphql",
     "microservices"
   ],
-    "sideEffects": false,
-      "exports": {
+  "sideEffects": false,
+  "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.js"
     }
   },
-    "engines": {
+  "engines": {
     "node": ">=20"
   },
   "scripts": {
@@ -35,7 +35,7 @@
     "prepublishOnly": "pnpm run build",
     "patch": "pnpm version patch",
     "release": "semantic-release",
-        "dev": "tsc -w"
+    "dev": "tsc -w"
   },
   "peerDependencies": {
     "@nestjs/graphql": "^13.2.4",

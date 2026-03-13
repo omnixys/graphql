@@ -12,8 +12,8 @@ importers:
         specifier: ^13.2.4
         version: 13.2.4(@nestjs/common@11.1.14(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.14(@nestjs/common@11.1.14(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(rxjs@7.8.2))(class-validator@0.15.1)(graphql@16.13.0)(reflect-metadata@0.2.2)
       '@omnixys/contracts':
-        specifier: ^1.1.1
-        version: 1.5.0
+        specifier: ^1.5.1
+        version: 1.5.1
       class-validator:
         specifier: ^0.15.1
         version: 0.15.1
@@ -237,8 +237,8 @@ packages:
   '@octokit/types@16.0.0':
     resolution: {integrity: sha512-sKq+9r1Mm4efXW1FCk7hFSeJo4QKreL/tTbR0rz/qx/r1Oa2VV83LTA/H/MuCOX7uCIJmQVRKBcbmWoySjAnSg==}
 
-  '@omnixys/contracts@1.5.0':
-    resolution: {integrity: sha512-d9tINOgRP6sxEcbK9nIAZTOqamJw6qd2hJGZ5UVRttsB6wGEptKkOdCVa0/h443N01ohvxUKfYtHhDfPcm9AHg==, tarball: https://npm.pkg.github.com/download/@omnixys/contracts/1.5.0/d5df1b7156a371f796184b3fc39c4048db1ba1b9}
+  '@omnixys/contracts@1.5.1':
+    resolution: {integrity: sha512-ppNk+yL6PS/dnQD+ukFCqQW2I86WY2Q8qfyBpEpNwFPHjo40vx5R+///mOsEYEEzj/wF9xVmRLQsFADFBigwhA==, tarball: https://npm.pkg.github.com/download/@omnixys/contracts/1.5.1/b78ddf5a4451191fa5b69ba788bd909231f862f2}
 
   '@pnpm/config.env-replace@1.1.0':
     resolution: {integrity: sha512-htyl8TWnKL7K/ESFa1oW2UB5lVDxuF5DpM7tBi6Hu2LNL3mWkIzNLG6N4zoCUP1lCKNxWy/3iu8mS8MvToGd6w==}
@@ -1817,7 +1817,7 @@ snapshots:
     dependencies:
       '@octokit/openapi-types': 27.0.0
 
-  '@omnixys/contracts@1.5.0':
+  '@omnixys/contracts@1.5.1':
     dependencies:
       jose: 6.2.1
 

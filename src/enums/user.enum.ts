@@ -7,7 +7,7 @@ import {
   MaritalStatusType,
   PersonStatusType,
   PhoneNumberType,
-  RealmRole,
+  RealmRoleType,
   RelationshipType,
   StatusType,
   UserType,
@@ -58,8 +58,8 @@ registerEnumType(UserType, {
   description: 'Specifies the category of a user (customer, employee, guest).',
 });
 
-registerEnumType(RealmRole, 
-  { name: 'RealmRole', 
+registerEnumType(RealmRoleType, 
+  { name: 'RealmRoleType', 
     description: 'Defines the Role of an User.'
   });
 

@@ -3,6 +3,12 @@
 All notable changes in this project will be documented in this file.
 
 
+## [2.0.0](https://github.com/omnixys/graphql/compare/v1.0.0...v2.0.0) (2026-03-17)
+
+### Tmp
+
+* **Tmp:** add @omnixys/shared package ([](https://github.com/omnixys/graphql/commit/c9002ab3b42f6e4b7e78afcb8017b5de1d915a7a))
+
 ## 1.0.0 (2026-03-17)
 
 ### Initial commit

@@ -3,6 +3,16 @@
 All notable changes in this project will be documented in this file.
 
 
+## [3.0.1](https://github.com/omnixys/graphql/compare/v3.0.0...v3.0.1) (2026-03-17)
+
+### Graphql
+
+* **Graphql:** unify enum registration via @omnixys/graphql to avoid type resolution errors ([](https://github.com/omnixys/graphql/commit/2e818c7bf8be866786b3dca558e2c4e47df19b28))
+
+### Other
+
+* **Other:** Merge branch 'main' of https://github.com/omnixys/graphql ([](https://github.com/omnixys/graphql/commit/ef35f764df91b86274528bbd3fd4af4b1404326e))
+
 ## [3.0.0](https://github.com/omnixys/graphql/compare/v2.0.0...v3.0.0) (2026-03-17)
 
 ### Other

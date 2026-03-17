@@ -3,6 +3,12 @@
 All notable changes in this project will be documented in this file.
 
 
+## 1.0.0 (2026-03-17)
+
+### Initial commit
+
+* **Initial commit:** fix enum ([](https://github.com/omnixys/graphql/commit/db05d0c59a60bd4231da34b3a37ed32cb168e940))
+
 ## [2.1.2](https://github.com/omnixys/graphql/compare/v2.1.1...v2.1.2) (2026-03-15)
 
 ### Event

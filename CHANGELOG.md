@@ -3,6 +3,91 @@
 All notable changes in this project will be documented in this file.
 
 
+## 1.0.0 (2026-04-15)
+
+### ⚠ BREAKING CHANGE
+
+* **Graphql:** Complete redesign of GraphQL layer with unified schema types, federation support,
+and centralized module configuration. Legacy schema definitions and inconsistent
+GraphQL setups have been removed.
+
+✨ Features:
+- Centralized GraphQL foundation for all Omnixys services
+- Shared schema primitives:
+  - Inputs, ObjectTypes, Enums, Interfaces
+  - Federation types and extensions
+- Code-first GraphQL approach with strict typing
+- Built-in OmnixysGraphQLModule:
+  - Apollo Federation v2 support
+  - Standardized configuration via createGraphQLConfig()
+  - Global module for seamless integration
+- Automatic enum registration bootstrap
+- Unified schema generation and sorting
+- Consistent context integration (headers, auth, request metadata)
+- Extensible configuration via overrides (forRoot)
+
+⚙️ Improvements:
+- Eliminated duplicated schema definitions across services
+- Strongly typed GraphQL models aligned with domain contracts
+- Standardized resolver patterns and schema structure
+- Improved DX with predictable module setup
+- Reduced boilerplate for GraphQL server initialization
+
+🧱 Architecture:
+- Federation-first design (Apollo Federation Driver)
+- Code-first schema generation (NestJS GraphQL)
+- Central configuration layer via createGraphQLConfig()
+- Global module pattern for cross-service consistency
+- Designed for gateway + subgraph architectures
+
+🛑 Removed / Changed:
+- Removed ad-hoc GraphQLModule configurations in services
+- Replaced scattered enum/type definitions with centralized shared package
+- Deprecated inconsistent schema patterns and manual setups
+
+📦 Compatibility:
+- Requires Node.js >= 20
+- Designed for NestJS + Apollo Federation environments
+- Fully compatible with:
+  - @omnixys/context (request context injection)
+  - @omnixys/auth (auth-aware resolvers)
+  - @omnixys/security (guards & RBAC in resolvers)
+  - @omnixys/observability (resolver tracing)
+
+📚 Notes:
+This release establishes a unified GraphQL foundation across all Omnixys services,
+ensuring consistent schema design, federation compatibility, and seamless integration
+with authentication, context, and observability layers.
+
+### Graphql
+
+* **Graphql:** unified GraphQL foundation, federation types & NestJS module ([](https://github.com/omnixys/graphql/commit/8852b984c679bb920f61d54256a42537b111b294))
+* **Graphql:** unify enum registration via @omnixys/graphql to avoid type resolution errors ([](https://github.com/omnixys/graphql/commit/2e818c7bf8be866786b3dca558e2c4e47df19b28))
+
+### Initial commit
+
+* **Initial commit:** fix enum ([](https://github.com/omnixys/graphql/commit/db05d0c59a60bd4231da34b3a37ed32cb168e940))
+
+### Other
+
+* **Other:** Merge branch 'main' of https://github.com/omnixys/graphql ([](https://github.com/omnixys/graphql/commit/ef35f764df91b86274528bbd3fd4af4b1404326e))
+* **Other:** Merge branch 'main' of https://github.com/omnixys/graphql ([](https://github.com/omnixys/graphql/commit/84bed5bdcd11d20857bd4d95c46eeaef1d437104))
+
+### Package
+
+* **Package:** update package.json ([](https://github.com/omnixys/graphql/commit/44415dd13a33dfef8a322d33bc0e82b0692ae1d5))
+
+### Release
+
+* **Release:** 1.0.0 [skip ci] ([](https://github.com/omnixys/graphql/commit/6dc6bc9c6ef59eca96b43db0cef7375280d98434))
+* **Release:** 2.0.0 [skip ci] ([](https://github.com/omnixys/graphql/commit/4690a8e904e35bdfbbb169202bc79a07d61952eb))
+* **Release:** 3.0.0 [skip ci] ([](https://github.com/omnixys/graphql/commit/a36ae4001134198b54a6a5781c0c519daf6b9b89))
+* **Release:** 3.0.1 [skip ci] ([](https://github.com/omnixys/graphql/commit/8aea77376f68e0ab2b4a978e40c34616b61577c0))
+
+### Tmp
+
+* **Tmp:** add @omnixys/shared package ([](https://github.com/omnixys/graphql/commit/c9002ab3b42f6e4b7e78afcb8017b5de1d915a7a))
+
 ## [3.0.1](https://github.com/omnixys/graphql/compare/v3.0.0...v3.0.1) (2026-03-17)
 
 ### Graphql

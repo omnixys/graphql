@@ -12,15 +12,15 @@ Dieses Package stellt eine zentrale, wiederverwendbare GraphQL-Schema-Definition
 
 Es enthält:
 
-* ✅ `@InputType()` Klassen
-* ✅ `@ObjectType()` Klassen
-* ✅ `@ArgsType()` Klassen
-* ✅ `@Enum()` Registrierungen
-* ✅ Federation Directives (`@key`, etc.)
-* ❌ Keine Business-Logik
-* ❌ Kein Prisma
-* ❌ Kein Kafka
-* ❌ Keine Service-spezifischen Implementierungen
+- ✅ `@InputType()` Klassen
+- ✅ `@ObjectType()` Klassen
+- ✅ `@ArgsType()` Klassen
+- ✅ `@Enum()` Registrierungen
+- ✅ Federation Directives (`@key`, etc.)
+- ❌ Keine Business-Logik
+- ❌ Kein Prisma
+- ❌ Kein Kafka
+- ❌ Keine Service-spezifischen Implementierungen
 
 ---
 
@@ -84,8 +84,8 @@ pnpm add @omnixys/graphql -w
 ## 🚀 Beispiel: AddressInput
 
 ```ts
-import { Field, ID, InputType } from '@nestjs/graphql';
-import { AddressType } from '@omnixys/contracts';
+import { Field, ID, InputType } from "@nestjs/graphql";
+import { AddressType } from "@omnixys/shared";
 
 @InputType()
 export class AddressInput {
@@ -148,8 +148,8 @@ export class Address {
 
 Federation-Direktiven gehören ebenfalls in dieses Package, damit:
 
-* Alle Subgraphs identische Entity-Definitionen nutzen
-* Der Gateway konsistente Keys erhält
+- Alle Subgraphs identische Entity-Definitionen nutzen
+- Der Gateway konsistente Keys erhält
 
 ---
 
@@ -157,17 +157,17 @@ Federation-Direktiven gehören ebenfalls in dieses Package, damit:
 
 `@omnixys/graphql` darf:
 
-* NestJS GraphQL verwenden
-* Federation Directives verwenden
-* Enums aus `@omnixys/contracts` importieren
+- NestJS GraphQL verwenden
+- Federation Directives verwenden
+- Enums aus `@omnixys/contracts` importieren
 
 `@omnixys/graphql` darf NICHT:
 
-* Prisma importieren
-* Services importieren
-* Kafka importieren
-* Business-Logik enthalten
-* Environment-Variablen verwenden
+- Prisma importieren
+- Services importieren
+- Kafka importieren
+- Business-Logik enthalten
+- Environment-Variablen verwenden
 
 Es ist rein deklarativ.
 
@@ -177,9 +177,9 @@ Es ist rein deklarativ.
 
 Da GraphQL-Schemas Breaking Changes verursachen können, gilt:
 
-* Minor Version → neue Felder (nullable)
-* Patch → interne Refactorings
-* Major → Feld entfernt oder Typ geändert
+- Minor Version → neue Felder (nullable)
+- Patch → interne Refactorings
+- Major → Feld entfernt oder Typ geändert
 
 Empfohlen: semantische Versionierung mit CI-Release-Pipeline.
 

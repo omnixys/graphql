@@ -1,6 +1,6 @@
 {
   "name": "@omnixys/graphql",
-  "version": "3.0.1",
+  "version": "0.1.0",
   "description": "Shared GraphQL Inputs, ObjectTypes, Enums and Federation types for Omnixys services",
   "license": "GPL-3.0-or-later",
   "type": "module",
@@ -17,6 +17,8 @@
   "keywords": [
     "omnixys",
     "graphql",
+    "nestjs",
+    "apollo",
     "microservices"
   ],
   "sideEffects": false,
@@ -38,13 +40,22 @@
     "dev": "tsc -w"
   },
   "peerDependencies": {
+    "@apollo/server": "^5.5.0",
+    "@nestjs/apollo": "^13.2.5",
+    "@nestjs/common": "^11.1.17",
     "@nestjs/graphql": "^13.2.4",
-    "@omnixys/contracts": "^1.5.1",
-    "class-validator": "^0.15.1",
-    "@omnixys/shared": "^2.0.0"
+    "@omnixys/context": "^1.0.0",
+    "@omnixys/shared": "^1.0.0",
+    "class-validator": "^0.15.1"
   },
   "devDependencies": {
+    "@apollo/server": "^5.5.0",
     "@commitlint/config-conventional": "^20.4.2",
+    "@nestjs/apollo": "^13.2.5",
+    "@nestjs/common": "^11.1.17",
+    "@nestjs/graphql": "^13.2.4",
+    "@omnixys/context": "^1.0.0",
+    "@omnixys/shared": "^1.0.0",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^13.0.1",
     "@semantic-release/git": "^10.0.1",

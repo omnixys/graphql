@@ -1,4 +1,4 @@
-name: Release Package
+name: Release & Publish Package
 
 on:
   push:
@@ -7,8 +7,12 @@ on:
 
 jobs:
   release:
-    # if: ${{ github.event.pull_request.merged == true && startsWith(github.event.pull_request.head.ref, 'release/') }}
     runs-on: ubuntu-latest
+
+    outputs:
+      released: ${{ steps.semantic.outputs.released }}
+      version: ${{ steps.read_version.outputs.version }}
+
     strategy:
       matrix:
         node-version: [24.10.0]
@@ -41,21 +45,23 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
 
-      - name: ♻️ Restore pnpm cache
-        uses: actions/cache@v5
-        with:
-          path: ~/.pnpm-store
-          key: pnpm-${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            pnpm-${{ runner.os }}-
-
       - name: 📦 Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Semantic Release
-        run: pnpm run release
+      - name: 🚀 Semantic Release
+        id: semantic
+        run: |
+          OUTPUT=$(pnpm run release || true)
+          echo "$OUTPUT"
+      
+          if echo "$OUTPUT" | grep -q "Published"; then
+            echo "released=true" >> $GITHUB_OUTPUT
+          else
+            echo "released=false" >> $GITHUB_OUTPUT
+          fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.OMNIXYS_TOKEN }}
 
       - name: Read version
         run: |
@@ -78,3 +84,48 @@ jobs:
             --body "$CURRENT_DATE" \
             --org omnixys \
             --visibility all
+
+  publish:
+    if: needs.release.outputs.released == 'true'
+    runs-on: ubuntu-latest
+    needs: release
+
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Ensure latest main
+        run: |
+          git fetch origin main
+          git checkout origin/main
+
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 10.33.0
+
+      - name: Setup npm registry auth
+        run: |
+          echo "@omnixys:registry=https://npm.pkg.github.com" >> .npmrc
+          echo "//npm.pkg.github.com/:_authToken=${OMNIXYS_TOKEN}" >> .npmrc
+        env:
+          OMNIXYS_TOKEN: ${{ secrets.OMNIXYS_TOKEN }}
+
+      - run: pnpm install
+      - run: pnpm build
+
+      - name: Setup npm registry auth
+        run: |
+          echo "@omnixys:registry=https://npm.pkg.github.com" >> .npmrc
+          echo "//npm.pkg.github.com/:_authToken=${OMNIXYS_TOKEN}" >> .npmrc
+        env:
+          OMNIXYS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - run: pnpm publish --no-git-checks
+        env:
+          OMNIXYS_TOKEN: ${{ secrets.GITHUB_TOKEN }}

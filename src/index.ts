@@ -1,16 +1,7 @@
-export * from "./enums/user.enum.js";
+export * from "./graphql.enums.bootstrap.js";
 export * from "./inputs/index.js";
+export * from './payloads/index.js';
 
-export {
-  ContactOptionsType,
-  GenderType,
-  InterestCategoryType,
-  InterestType,
-  MaritalStatusType,
-  PersonStatusType,
-  PhoneNumberType,
-  RealmRoleType,
-  RelationshipType,
-  StatusType,
-  UserType,
-} from "@omnixys/contracts";
+export * from "./graphql.module.js";
+export * from "./graphql.enums.js";
+export * from './graphql.enums.bootstrap.js'

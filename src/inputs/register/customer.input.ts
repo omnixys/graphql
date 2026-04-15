@@ -1,6 +1,6 @@
-import { Field, ID, InputType } from '@nestjs/graphql';
-import { ContactOptionsType, StatusType } from '@omnixys/contracts';
-import { IsBoolean, IsEnum } from 'class-validator';
+import { Field, ID, InputType } from "@nestjs/graphql";
+import { ContactOptionsType, StatusType } from "@omnixys/shared";
+import { IsBoolean, IsEnum } from "class-validator";
 
 @InputType()
 export class CustomerInput {

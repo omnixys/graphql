@@ -1,5 +1,5 @@
 import { Field, ID, InputType } from '@nestjs/graphql';
-import { PhoneNumberType } from '@omnixys/contracts';
+import { PhoneNumberType } from '@omnixys/shared';
 import { IsEnum, IsOptional, IsString, Length, Matches } from 'class-validator';
 
 export const PHONE_RE = /^\+?[0-9 .\-()]{6,20}$/;

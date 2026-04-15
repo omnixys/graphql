@@ -1,12 +1,12 @@
-import { Field, GraphQLISODateTime, ID, InputType } from '@nestjs/graphql';
-import { RelationshipType } from '@omnixys/contracts';
+import { Field, GraphQLISODateTime, ID, InputType } from "@nestjs/graphql";
+import { RelationshipType } from "@omnixys/shared";
 import {
   IsBoolean,
   IsEnum,
+  IsInt,
   IsOptional,
   IsString,
-  IsInt,
-} from 'class-validator';
+} from "class-validator";
 
 @InputType()
 export class ContactInput {

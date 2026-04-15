@@ -1,13 +1,13 @@
-import { UserAddressInput } from './address.input.js';
-import { ContactInput } from './contact.input.js';
-import { CustomerInput } from './customer.input.js';
-import { EmployeeInput } from './employee.input.js';
-import { PersonalInfoInput } from './personal-info.input.js';
-import { PhoneNumberInput } from './phone-number.input.js';
-import { AddSecurityQuestionInput } from './security-question.input.js';
-import { Field, GraphQLISODateTime, InputType } from '@nestjs/graphql';
-import { UserType } from '@omnixys/contracts';
-import { IsBoolean, IsString, Length } from 'class-validator';
+import { Field, GraphQLISODateTime, InputType } from "@nestjs/graphql";
+import { UserType } from "@omnixys/shared";
+import { IsBoolean, IsString, Length } from "class-validator";
+import { UserAddressInput } from "./address.input.js";
+import { ContactInput } from "./contact.input.js";
+import { CustomerInput } from "./customer.input.js";
+import { EmployeeInput } from "./employee.input.js";
+import { PersonalInfoInput } from "./personal-info.input.js";
+import { PhoneNumberInput } from "./phone-number.input.js";
+import { AddSecurityQuestionInput } from "./security-question.input.js";
 
 /**
  * Input type for creating a new user.

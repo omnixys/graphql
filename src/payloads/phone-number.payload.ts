@@ -36,6 +36,6 @@ export class PhoneNumberPayload {
   @Field(() => GraphQLISODateTime)
   createdAt!: Date;
 
-  @Field(() => GraphQLISODateTime)
-  updatedAt!: Date;
+  @Field(() => GraphQLISODateTime, { nullable: true })
+  updatedAt?: Date | undefined;
 }

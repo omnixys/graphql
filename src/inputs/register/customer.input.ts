@@ -1,5 +1,5 @@
 import { Field, ID, InputType } from "@nestjs/graphql";
-import { ContactOptionsType, StatusType } from "@omnixys/shared";
+import { ContactOptionsType, StatusType } from "@omnixys/contracts";
 import { IsBoolean, IsEnum } from "class-validator";
 
 @InputType()

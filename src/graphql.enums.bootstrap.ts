@@ -11,7 +11,7 @@ import {
   RelationshipType,
   StatusType,
   UserType,
-} from "@omnixys/shared";
+} from "@omnixys/contracts";
 import { registerEnum } from "./graphql.enums.js";
 
 const enumDefinitions: ReadonlyArray<readonly [string, object]> = [

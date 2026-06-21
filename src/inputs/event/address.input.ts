@@ -1,5 +1,5 @@
 import { Field, ID, InputType } from "@nestjs/graphql";
-import { EventAddress } from "@omnixys/shared";
+import { EventAddress } from "@omnixys/contracts";
 import { IsString, Length, IsOptional } from "class-validator";
 
 @InputType()

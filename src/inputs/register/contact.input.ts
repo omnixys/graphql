@@ -1,5 +1,5 @@
 import { Field, GraphQLISODateTime, ID, InputType, Int } from "@nestjs/graphql";
-import { RelationshipType } from "@omnixys/shared";
+import { RelationshipType } from "@omnixys/contracts";
 import {
   IsBoolean,
   IsEnum,

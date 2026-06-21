@@ -92,6 +92,27 @@ test("structured domain errors map to stable GraphQL extensions", () => {
   assert.deepEqual(formatted.extensions.metadata, { userId: "user-1" });
 });
 
+test("unscoped domain errors inherit the active canonical context", () => {
+  ContextAccessor.run(
+    { requestId: "request-active", correlationId: "correlation-active" },
+    () => {
+      const formatter = createGraphQLFormatError();
+      const domainError = Object.assign(new Error("User does not exist"), {
+        code: "USER_NOT_FOUND",
+        requestId: "unscoped",
+        correlationId: "unscoped",
+      });
+      const formatted = formatter(
+        { message: domainError.message, extensions: {} },
+        new GraphQLError(domainError.message, { originalError: domainError }),
+      );
+
+      assert.equal(formatted.extensions.requestId, "request-active");
+      assert.equal(formatted.extensions.correlationId, "correlation-active");
+    },
+  );
+});
+
 test("unknown resolver errors are redacted but retain canonical diagnostics", () => {
   ContextAccessor.run(
     {

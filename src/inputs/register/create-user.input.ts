@@ -1,5 +1,5 @@
 import { Field, GraphQLISODateTime, InputType } from "@nestjs/graphql";
-import { UserType } from "@omnixys/shared";
+import { UserType } from "@omnixys/contracts";
 import { IsBoolean, IsString, Length } from "class-validator";
 import { UserAddressInput } from "./address.input.js";
 import { ContactInput } from "./contact.input.js";

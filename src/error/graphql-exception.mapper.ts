@@ -140,19 +140,23 @@ function structuredError(value: unknown): FrameworkErrorLike | undefined {
 function errorContext(error?: FrameworkErrorLike) {
   const context = ContextAccessor.get();
   return {
-    requestId: error?.requestId ?? context?.requestId ?? "unscoped",
+    requestId: scopedId(error?.requestId) ?? context?.requestId ?? "unscoped",
     correlationId:
-      error?.correlationId ??
+      scopedId(error?.correlationId) ??
       context?.correlationId ??
       context?.requestId ??
       "unscoped",
-    traceId: error?.traceId ?? context?.trace?.traceId,
-    actorId: error?.actorId ?? context?.principal?.actorId,
+    traceId: scopedId(error?.traceId) ?? context?.trace?.traceId,
+    actorId: scopedId(error?.actorId) ?? context?.principal?.actorId,
     tenantId:
-      error?.tenantId ??
+      scopedId(error?.tenantId) ??
       context?.tenant?.tenantId ??
       context?.principal?.tenantId,
   };
+}
+
+function scopedId(value: string | undefined): string | undefined {
+  return value && value !== "unscoped" ? value : undefined;
 }
 
 function messageOf(error: unknown): string {

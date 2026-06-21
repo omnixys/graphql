@@ -6,4 +6,4 @@ export * from "./graphql.enums.bootstrap.js";
 
 export * from "./graphql.module.js";
 export * from "./graphql.enums.js";
-export * from "./graphql.enums.bootstrap.js";
+export * from "./graphql.options.js";

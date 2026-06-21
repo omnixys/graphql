@@ -1,10 +1,10 @@
-import { GraphQLError } from "graphql";
+import { createFrameworkGraphQLError } from "./graphql-exception.mapper.js";
 
 export function accessBlocked(reasons: string[]) {
-  return new GraphQLError("Access blocked", {
-    extensions: {
-      code: "ACCESS_BLOCKED",
-      reasons,
-    },
-  });
+  return createFrameworkGraphQLError(
+    "ACCESS_BLOCKED",
+    "Access blocked",
+    { reasons },
+    { reasons },
+  );
 }

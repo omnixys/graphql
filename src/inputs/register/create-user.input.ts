@@ -34,7 +34,7 @@ export class CreateUserInput {
   @Field(() => [PhoneNumberInput], { nullable: true })
   phoneNumbers?: PhoneNumberInput[];
 
-  @Field(() => [UserAddressInput])
+  @Field(() => [UserAddressInput], { nullable: true })
   addresses?: UserAddressInput[];
 
   @Field(() => CustomerInput, { nullable: true })

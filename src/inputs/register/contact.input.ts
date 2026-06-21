@@ -1,4 +1,4 @@
-import { Field, GraphQLISODateTime, ID, InputType } from "@nestjs/graphql";
+import { Field, GraphQLISODateTime, ID, InputType, Int } from "@nestjs/graphql";
 import { RelationshipType } from "@omnixys/shared";
 import {
   IsBoolean,
@@ -18,7 +18,7 @@ export class ContactInput {
   @IsEnum(RelationshipType)
   relationship!: RelationshipType;
 
-  @Field(() => Number, { nullable: true })
+  @Field(() => Int, { nullable: true })
   @IsOptional()
   @IsInt()
   withdrawalLimit?: number;
@@ -46,7 +46,7 @@ export class AddContactInput {
   @IsString()
   userId!: string;
 
-  @Field(() => String)
+  @Field(() => ContactInput)
   Contact!: ContactInput;
 }
 

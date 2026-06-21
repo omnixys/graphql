@@ -1,1 +1,1 @@
-export * from './phone-number.payload.js';
+export * from "./phone-number.payload.js";

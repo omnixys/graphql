@@ -4,28 +4,34 @@ import {
   InterestCategoryType,
   InterestType,
   MaritalStatusType,
+  MessageDirectionEnum,
   PersonStatusType,
   PhoneNumberType,
   RealmRoleType,
   RelationshipType,
   StatusType,
   UserType,
-  MessageDirectionEnum,
 } from "@omnixys/shared";
-import { registerEnum } from './graphql.enums.js';
+import { registerEnum } from "./graphql.enums.js";
 
-/**
- * Register enum in GraphQL schema.
- */
-registerEnum('MessageDirection',MessageDirectionEnum);
-registerEnum('ContactOptionsType', ContactOptionsType);
-registerEnum('GenderType', GenderType);
-registerEnum('InterestType', InterestType);
-registerEnum('MaritalStatusType', MaritalStatusType);
-registerEnum('PersonStatusType', PersonStatusType);
-registerEnum('PhoneNumberType', PhoneNumberType);
-registerEnum('RelationshipType', RelationshipType);
-registerEnum('StatusType', StatusType);
-registerEnum('UserType', UserType);
-registerEnum('RealmRoleType', RealmRoleType);
-registerEnum('InterestCategoryType', InterestCategoryType);
+const enumDefinitions: ReadonlyArray<readonly [string, object]> = [
+  ["MessageDirection", MessageDirectionEnum],
+  ["ContactOptionsType", ContactOptionsType],
+  ["GenderType", GenderType],
+  ["InterestType", InterestType],
+  ["MaritalStatusType", MaritalStatusType],
+  ["PersonStatusType", PersonStatusType],
+  ["PhoneNumberType", PhoneNumberType],
+  ["RelationshipType", RelationshipType],
+  ["StatusType", StatusType],
+  ["UserType", UserType],
+  ["RealmRoleType", RealmRoleType],
+  ["InterestCategoryType", InterestCategoryType],
+];
+
+export function registerOmnixysGraphQLEnums(): void {
+  for (const [name, enumRef] of enumDefinitions) registerEnum(name, enumRef);
+}
+
+// Compatibility: importing the package root continues to register all enums.
+registerOmnixysGraphQLEnums();

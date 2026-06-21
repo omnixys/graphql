@@ -21,7 +21,10 @@
     "apollo",
     "microservices"
   ],
-  "sideEffects": false,
+  "sideEffects": [
+    "./dist/index.js",
+    "./dist/graphql.enums.bootstrap.js"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -33,7 +36,9 @@
     "node": ">=20"
   },
   "scripts": {
+    "prebuild": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\"",
     "build": "tsc -p tsconfig.json",
+    "test": "pnpm run build && node --test test/*.test.mjs",
     "prepublishOnly": "pnpm run build",
     "patch": "pnpm version patch",
     "release": "semantic-release",
@@ -43,8 +48,10 @@
     "@apollo/server": "^5.5.0",
     "@nestjs/apollo": "^13.2.5",
     "@nestjs/common": "^11.1.17",
+    "@nestjs/core": "^11.1.17",
     "@nestjs/graphql": "^13.2.4",
     "@omnixys/context": "^1.0.0",
+    "@omnixys/logger": "^1.0.0",
     "@omnixys/shared": "^1.0.0",
     "class-validator": "^0.15.1",
     "graphql": "^16.13.2"
@@ -54,9 +61,11 @@
     "@commitlint/config-conventional": "^20.4.2",
     "@nestjs/apollo": "^13.2.5",
     "@nestjs/common": "^11.1.17",
+    "@nestjs/core": "^11.1.17",
     "@nestjs/graphql": "^13.2.4",
-    "@omnixys/context": "^1.0.0",
-    "@omnixys/shared": "^1.0.0",
+    "@omnixys/context": "file:../context",
+    "@omnixys/logger": "file:../logger",
+    "@omnixys/shared": "file:../shared",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^13.0.1",
     "@semantic-release/git": "^10.0.1",

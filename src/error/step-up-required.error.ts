@@ -1,11 +1,10 @@
-import { GraphQLError } from "graphql";
+import { createFrameworkGraphQLError } from "./graphql-exception.mapper.js";
 
 export function stepUpRequired(stepUp: string, reasons: string[]) {
-  return new GraphQLError("Step-up authentication required", {
-    extensions: {
-      code: "STEP_UP_REQUIRED",
-      stepUp,
-      reasons,
-    },
-  });
+  return createFrameworkGraphQLError(
+    "STEP_UP_REQUIRED",
+    "Step-up authentication required",
+    { stepUp, reasons },
+    { stepUp, reasons },
+  );
 }

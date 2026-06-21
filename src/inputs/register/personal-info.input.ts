@@ -1,6 +1,6 @@
-import { Field, GraphQLISODateTime, InputType } from '@nestjs/graphql';
-import { GenderType, MaritalStatusType } from '@omnixys/shared';
-import { IsEmail, IsEnum, IsOptional, IsString } from 'class-validator';
+import { Field, GraphQLISODateTime, InputType } from "@nestjs/graphql";
+import { GenderType, MaritalStatusType } from "@omnixys/shared";
+import { IsEmail, IsEnum, IsOptional, IsString } from "class-validator";
 
 @InputType()
 export class PersonalInfoInput {

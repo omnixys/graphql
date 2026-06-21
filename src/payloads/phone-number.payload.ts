@@ -1,6 +1,12 @@
-import { Directive, Field, GraphQLISODateTime, ID, ObjectType } from '@nestjs/graphql';
-import { PhoneNumberType } from '@omnixys/shared';
-import { IsOptional, IsString } from 'class-validator';
+import {
+  Directive,
+  Field,
+  GraphQLISODateTime,
+  ID,
+  ObjectType,
+} from "@nestjs/graphql";
+import { PhoneNumberType } from "@omnixys/shared";
+import { IsOptional, IsString } from "class-validator";
 
 /**
  * Represents a phone number linked to a specific user.
@@ -27,7 +33,7 @@ export class PhoneNumberPayload {
 
   @Field(() => Boolean, { nullable: true })
   @IsOptional()
-  isPrimary!: boolean;
+  isPrimary?: boolean;
 
   @Field(() => String)
   @IsString()

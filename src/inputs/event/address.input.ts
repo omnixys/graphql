@@ -1,6 +1,6 @@
 import { Field, ID, InputType } from "@nestjs/graphql";
 import { EventAddress } from "@omnixys/shared";
-import { IsString, Length,  IsOptional } from "class-validator";
+import { IsString, Length, IsOptional } from "class-validator";
 
 @InputType()
 export class EventAddressInput implements EventAddress {
@@ -20,7 +20,7 @@ export class EventAddressInput implements EventAddress {
   @IsString()
   postalCode?: string;
 
-  @Field(() => String, { nullable: true })
+  @Field(() => String)
   @IsString()
   city!: string;
 
@@ -29,7 +29,7 @@ export class EventAddressInput implements EventAddress {
   @IsString()
   state?: string;
 
-  @Field(() => String, { nullable: true })
+  @Field(() => String)
   @IsString()
   country!: string;
 

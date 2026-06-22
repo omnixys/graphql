@@ -4,12 +4,14 @@ import { TypeMetadataStorage } from "@nestjs/graphql/dist/schema-builder/storage
 import {
   AddAddressInput,
   AddContactInput,
+  BaseGraphQLException,
   ContactInput,
   CreateUserInput,
   EventAddressInput,
   FrameworkGraphQLException,
   GraphQLExceptionFilter,
   OmnixysGraphQLModule,
+  SeatOccupiedException,
   UserAddressInput,
   accessBlocked,
   createGraphQLConfig,
@@ -90,6 +92,26 @@ test("structured domain errors map to stable GraphQL extensions", () => {
   assert.equal(formatted.extensions.actorId, "actor-domain");
   assert.equal(formatted.extensions.tenantId, "tenant-domain");
   assert.deepEqual(formatted.extensions.metadata, { userId: "user-1" });
+  assert.deepEqual(formatted.extensions.details, { userId: "user-1" });
+  assert.match(formatted.extensions.timestamp, /^\d{4}-\d{2}-\d{2}T/);
+});
+
+test("typed GraphQL exceptions expose codes and redact sensitive details", () => {
+  const error = new SeatOccupiedException("seat-1", {
+    sectionId: "section-1",
+    accessToken: "must-not-leak",
+    nested: { password: "must-not-leak", row: 2 },
+  });
+
+  assert.ok(error instanceof BaseGraphQLException);
+  assert.equal(error.extensions.code, "SEAT_OCCUPIED");
+  assert.deepEqual(error.extensions.details, {
+    seatId: "seat-1",
+    sectionId: "section-1",
+    nested: { row: 2 },
+  });
+  assert.deepEqual(error.extensions.metadata, error.extensions.details);
+  assert.match(error.extensions.timestamp, /^\d{4}-\d{2}-\d{2}T/);
 });
 
 test("unscoped domain errors inherit the active canonical context", () => {

@@ -190,6 +190,28 @@ Empfohlen: semantische Versionierung mit CI-Release-Pipeline.
 Security-Relevante Informationen (Tokens, interne Felder) dürfen nicht als GraphQL-Types exponiert werden.
 Für Sicherheitsmeldungen siehe SECURITY.md .
 
+## Typed exception mapping
+
+Services throw transport-neutral `FrameworkException` instances from
+`@omnixys/contracts`. `GraphQLExceptionFilter`, `toGraphQLError`, and the
+configured formatter preserve the stable code and expose this client contract:
+
+```ts
+extensions: {
+  code: ErrorCode;
+  requestId: string;
+  correlationId: string;
+  traceId?: string;
+  timestamp: string;
+  details: Record<string, unknown>;
+}
+```
+
+`metadata` remains as a compatibility alias for `details`. Sensitive keys,
+internal exception objects, and stack traces are removed. New resolvers should
+throw domain exceptions; `BaseGraphQLException` and its typed subclasses exist
+for transport-specific integrations and compatibility facades.
+
 ---
 
 ## 📜 Lizenz

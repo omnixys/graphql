@@ -201,6 +201,17 @@ test("federation configuration is production-safe and override-compatible", () =
   assert.ok(syncModule.providers.includes(GraphQLExceptionFilter));
 });
 
+test("Fastify context preserves positional request and reply values", async () => {
+  const config = createGraphQLConfig();
+  const req = { id: "request-1" };
+  const reply = { setCookie() {} };
+
+  const context = await config.context(req, reply);
+
+  assert.equal(context.req, req);
+  assert.equal(context.reply, reply);
+});
+
 function field(target, name) {
   const metadata = TypeMetadataStorage.getInputTypeMetadataByTarget(target);
   const property = metadata?.properties?.find(

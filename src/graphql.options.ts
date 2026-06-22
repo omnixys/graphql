@@ -15,7 +15,11 @@ export function createGraphQLConfig(
     stopOnApplicationShutdown: true,
     inheritResolversFromInterfaces: true,
     formatError: createGraphQLFormatError(),
-    context: ({ req, reply }: GqlFastifyContext) => ({ req, reply }),
+    // @as-integrations/fastify invokes this factory with positional values.
+    context: (
+      req: GqlFastifyContext["req"],
+      reply: GqlFastifyContext["reply"],
+    ): GqlFastifyContext => ({ req, reply }),
   };
 
   return {

@@ -3,6 +3,20 @@
 All notable changes in this project will be documented in this file.
 
 
+## [2.0.0](https://github.com/omnixys/graphql/compare/v1.0.1...v2.0.0) (2026-06-23)
+
+### Graphql
+
+* **Graphql:** declare runtime peer dependencies ([](https://github.com/omnixys/graphql/commit/0378d0da3f6cbc17d5a003a3d91965014c9843e0))
+* **Graphql:** add typed GraphQL exceptions ([](https://github.com/omnixys/graphql/commit/794521116a4d7f548099a48aa3317f3907e08ed1))
+* **Graphql:** standardize federation schema and errors ([](https://github.com/omnixys/graphql/commit/95524e41f5fae36c525417d5602902dabae7553f))
+* **Graphql:** preserve Fastify reply in resolver context ([](https://github.com/omnixys/graphql/commit/bc14ac8e05de4f5818571c1d6e6c7f5b4da8345b))
+* **Graphql:** consume canonical contracts ([](https://github.com/omnixys/graphql/commit/f830677d08cabec7daa1d9bde73428773b31e166))
+
+### Other
+
+* **Other:** Merge branch 'main' of https://github.com/omnixys/graphql ([](https://github.com/omnixys/graphql/commit/dc44fe0b899868991ddeded7bb766616a5c8015f))
+
 ## [1.0.1](https://github.com/omnixys/graphql/compare/v1.0.0...v1.0.1) (2026-05-24)
 
 ### Docker

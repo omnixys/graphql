@@ -3,6 +3,16 @@
 All notable changes in this project will be documented in this file.
 
 
+## [1.0.1](https://github.com/omnixys/graphql/compare/v1.0.0...v1.0.1) (2026-05-24)
+
+### Docker
+
+* **Docker:** update pnpm version ([](https://github.com/omnixys/graphql/commit/177ce966f49efb10b7d409719c1024835dbe8f76))
+
+### Update
+
+* **Update:** package.json ([](https://github.com/omnixys/graphql/commit/97f689d8528d39e921962c11b1a152ab6858f6e0))
+
 ## 1.0.0 (2026-04-15)
 
 ### ⚠ BREAKING CHANGE

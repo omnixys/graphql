@@ -1,3 +1,4 @@
+import { Type } from "class-transformer";
 import { Field, GraphQLISODateTime, InputType } from "@nestjs/graphql";
 import { UserType } from "@omnixys/contracts";
 import { IsBoolean, IsString, Length } from "class-validator";
@@ -32,9 +33,11 @@ export class CreateUserInput {
   personalInfo!: PersonalInfoInput;
 
   @Field(() => [PhoneNumberInput], { nullable: true })
+  @Type(() => PhoneNumberInput)
   phoneNumbers?: PhoneNumberInput[];
 
   @Field(() => [UserAddressInput], { nullable: true })
+  @Type(() => UserAddressInput)
   addresses?: UserAddressInput[];
 
   @Field(() => CustomerInput, { nullable: true })
@@ -44,9 +47,11 @@ export class CreateUserInput {
   employee?: EmployeeInput;
 
   @Field(() => [ContactInput], { nullable: true })
+  @Type(() => ContactInput)
   contacts?: ContactInput[];
 
   @Field(() => [AddSecurityQuestionInput], { nullable: true })
+  @Type(() => AddSecurityQuestionInput)
   securityQuestions?: AddSecurityQuestionInput[];
 
   @Field(() => Boolean)

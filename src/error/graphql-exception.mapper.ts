@@ -34,8 +34,6 @@ export class BaseGraphQLException extends GraphQLError {
         code,
         ...errorContext(),
         timestamp: new Date().toISOString(),
-        details: safeDetails,
-        // Compatibility alias retained for existing Apollo consumers.
         metadata: safeDetails,
       },
     });
@@ -48,8 +46,8 @@ export class FrameworkGraphQLException extends BaseGraphQLException {}
 export function toGraphQLError(error: unknown): GraphQLError {
   if (error instanceof GraphQLError && !structuredError(error.originalError)) {
     const code = codeOf(error.extensions.code);
-    const details = sanitizeDetails(
-      recordOf(error.extensions.details) ?? recordOf(error.extensions.metadata),
+    const meta = sanitizeDetails(
+      recordOf(error.extensions.metadata) ?? recordOf(error.extensions.details),
     );
     return new GraphQLError(error.message, {
       nodes: error.nodes,
@@ -62,8 +60,7 @@ export function toGraphQLError(error: unknown): GraphQLError {
         code,
         ...errorContext(),
         timestamp: timestampOf(error.extensions.timestamp),
-        details,
-        metadata: details,
+        metadata: meta,
       },
     });
   }
@@ -73,7 +70,7 @@ export function toGraphQLError(error: unknown): GraphQLError {
   const context = errorContext(structured);
   const message = structured?.message ?? messageOf(error);
   const code = structured?.code ?? ErrorCode.INTERNAL_SERVER_ERROR;
-  const details = sanitizeDetails(structured?.metadata);
+  const meta = sanitizeDetails(structured?.metadata);
 
   return new GraphQLError(message, {
     originalError: error instanceof Error ? error : undefined,
@@ -81,8 +78,7 @@ export function toGraphQLError(error: unknown): GraphQLError {
       code,
       ...context,
       timestamp: new Date().toISOString(),
-      details,
-      metadata: details,
+      metadata: meta,
     },
   });
 }
@@ -100,10 +96,10 @@ export function createGraphQLFormatError(
         : ErrorCode.INTERNAL_SERVER_ERROR);
     const safeClientError = code !== ErrorCode.INTERNAL_SERVER_ERROR;
     const context = errorContext(structured);
-    const details = sanitizeDetails(
+    const meta = sanitizeDetails(
       structured?.metadata ??
-        recordOf(formatted.extensions?.details) ??
-        recordOf(formatted.extensions?.metadata),
+        recordOf(formatted.extensions?.metadata) ??
+        recordOf(formatted.extensions?.details),
     );
 
     return {
@@ -117,8 +113,7 @@ export function createGraphQLFormatError(
         code,
         ...context,
         timestamp: timestampOf(formatted.extensions?.timestamp),
-        details,
-        metadata: details,
+        metadata: meta,
       },
     };
   };

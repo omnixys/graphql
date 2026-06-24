@@ -92,7 +92,6 @@ test("structured domain errors map to stable GraphQL extensions", () => {
   assert.equal(formatted.extensions.actorId, "actor-domain");
   assert.equal(formatted.extensions.tenantId, "tenant-domain");
   assert.deepEqual(formatted.extensions.metadata, { userId: "user-1" });
-  assert.deepEqual(formatted.extensions.details, { userId: "user-1" });
   assert.match(formatted.extensions.timestamp, /^\d{4}-\d{2}-\d{2}T/);
 });
 
@@ -105,12 +104,11 @@ test("typed GraphQL exceptions expose codes and redact sensitive details", () =>
 
   assert.ok(error instanceof BaseGraphQLException);
   assert.equal(error.extensions.code, "SEAT_OCCUPIED");
-  assert.deepEqual(error.extensions.details, {
+  assert.deepEqual(error.extensions.metadata, {
     seatId: "seat-1",
     sectionId: "section-1",
     nested: { row: 2 },
   });
-  assert.deepEqual(error.extensions.metadata, error.extensions.details);
   assert.match(error.extensions.timestamp, /^\d{4}-\d{2}-\d{2}T/);
 });
 

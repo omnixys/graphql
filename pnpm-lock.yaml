@@ -40,8 +40,8 @@ importers:
         specifier: ^2.0.0
         version: 2.0.0(@nestjs/common@11.1.23(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2))
       '@omnixys/logger':
-        specifier: ^2.0.0
-        version: 2.0.0(67003366e046aac3647483beb0eb1c07)
+        specifier: ^2.0.1
+        version: 2.0.1(67003366e046aac3647483beb0eb1c07)
       '@semantic-release/changelog':
         specifier: ^6.0.3
         version: 6.0.3(semantic-release@25.0.3)
@@ -432,8 +432,8 @@ packages:
     peerDependencies:
       '@nestjs/common': ^11.1.27
 
-  '@omnixys/logger@2.0.0':
-    resolution: {integrity: sha512-q54C44eKFAIKPdOtSWCIySf93kh15lbpFP4mA7q3aldf9ihQ2kq08HNeZOShOuVEMXUjc7i3mSo6U3mV8s1T+A==, tarball: https://npm.pkg.github.com/download/@omnixys/logger/2.0.0/4eb15480fc536d093753f2dc24b563480c5e0dc9}
+  '@omnixys/logger@2.0.1':
+    resolution: {integrity: sha512-WVWQ1oP+OFeFnYIxHvBiDjTPOlMJASYgIBLbxuLCus3gIk0/nMRzGIdQWu2IwS2tWCLxKI8zI6v3ljp9Wzu+0w==, tarball: https://npm.pkg.github.com/download/@omnixys/logger/2.0.1/117f9c61bf09915807b04f8a423662c20d932a4b}
     peerDependencies:
       '@nestjs/common': ^11.0.0
       '@nestjs/core': ^11.1.17
@@ -3487,7 +3487,7 @@ snapshots:
       '@nestjs/common': 11.1.23(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       zod: 4.4.3
 
-  '@omnixys/logger@2.0.0(67003366e046aac3647483beb0eb1c07)':
+  '@omnixys/logger@2.0.1(67003366e046aac3647483beb0eb1c07)':
     dependencies:
       '@nestjs/common': 11.1.23(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.23(@nestjs/common@11.1.23(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(rxjs@7.8.2)

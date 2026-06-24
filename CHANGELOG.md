@@ -3,6 +3,12 @@
 All notable changes in this project will be documented in this file.
 
 
+## [2.0.1](https://github.com/omnixys/graphql/compare/v2.0.0...v2.0.1) (2026-06-24)
+
+### Exception
+
+* **Exception:** optimize exception handling ([](https://github.com/omnixys/graphql/commit/7f5a4ab43facd402d2583bf87db4264fe0bfccf3))
+
 ## [2.0.0](https://github.com/omnixys/graphql/compare/v1.0.1...v2.0.0) (2026-06-23)
 
 ### Graphql

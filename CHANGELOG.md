@@ -3,6 +3,12 @@
 All notable changes in this project will be documented in this file.
 
 
+## [3.0.0](https://github.com/omnixys/graphql/compare/v2.0.1...v3.0.0) (2026-07-15)
+
+### Update
+
+* **Update:** update package ([](https://github.com/omnixys/graphql/commit/d166c259fd21e285558495228c10512e9415ae5b))
+
 ## [2.0.0](https://github.com/omnixys/graphql/compare/v1.0.1...v2.0.0) (2026-06-23)
 
 ### Graphql

@@ -3,6 +3,12 @@
 All notable changes in this project will be documented in this file.
 
 
+## [3.0.1](https://github.com/omnixys/graphql/compare/v3.0.0...v3.0.1) (2026-07-23)
+
+### Deps
+
+* **Deps:** update logger vdeps version ([](https://github.com/omnixys/graphql/commit/75e35033aa898b0026d6c6e324a5762b8db4f582))
+
 ## [3.0.0](https://github.com/omnixys/graphql/compare/v2.0.1...v3.0.0) (2026-07-15)
 
 ### Update
